@@ -131,6 +131,36 @@ button {
 function post() {
   const text = document.getElementById("postInput").value;
   const image = document.getElementById("imageInput").files[0];
+
+  if (text.trim() === "" && !image) return;
+
+  let imageData = null;
+
+  if (image) {
+    const reader = new FileReader();
+    reader.onload = async function () {
+      imageData = reader.result;
+
+      await savePost(text, imageData);
+    };
+    reader.readAsDataURL(image);
+  } else {
+    savePost(text, null);
+  }
+}
+
+async function savePost(text, image) {
+  await addDoc(collection(db, "posts"), {
+    text: text,
+    image: image,
+    time: new Date().toLocaleTimeString()
+  });
+
+  document.getElementById("postInput").value = "";
+  document.getElementById("imageInput").value = "";
+}
+  const text = document.getElementById("postInput").value;
+  const image = document.getElementById("imageInput").files[0];
   const feed = document.getElementById("feed");
 
   if (text.trim() === "" && !image) return;
