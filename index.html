@@ -220,7 +220,8 @@ function toggleTheme() {
   const firebaseConfig = {
     // seu config aqui
   };
-
+window.post = post;
+window.toggleTheme = toggleTheme;
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
 
