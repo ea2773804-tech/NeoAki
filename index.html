@@ -1,18 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
+  <meta charset="UTF-8">
   <title>NeoAki</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      background: #f2f2f2;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 15px;
+    }
+
+    .header {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .header img {
+      width: 140px;
+    }
+
+    .post-box {
+      background: white;
+      padding: 10px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px;
+      border: none;
+      background: #4a6cf7;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .post {
+      background: white;
+      padding: 10px;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+  </style>
+
 </head>
+
 <body>
 
-<h1>NeoAki</h1>
+  <div class="container">
 
-<input id="postInput" placeholder="O que você está pensando?">
-<button onclick="postar()">Postar</button>
+    <!-- LOGO -->
+    <div class="header">
+      <img src="logo.png" alt="NeoAki">
+      <h1>NeoAki</h1>
+    </div>
 
-<div id="feed"></div>
+    <!-- POST -->
+    <div class="post-box">
+      <input id="postInput" placeholder="O que você está pensando?">
+      <button onclick="postar()">Postar</button>
+    </div>
 
-<script type="module" src="app.js"></script>
+    <!-- FEED -->
+    <div id="feed"></div>
+
+  </div>
+
+  <script type="module" src="app.js"></script>
 
 </body>
 </html>
