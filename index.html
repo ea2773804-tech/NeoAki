@@ -9,6 +9,7 @@
       font-family: Arial;
       background: #f2f2f2;
       margin: 0;
+      transition: 0.3s;
     }
 
     .container {
@@ -67,6 +68,24 @@
       border-radius: 10px;
       margin-top: 10px;
     }
+
+    /* 🌗 MODO ESCURO */
+    .dark {
+      background: #121212;
+      color: white;
+    }
+
+    .dark .post-box,
+    .dark .post {
+      background: #1e1e1e;
+      color: white;
+    }
+
+    .dark input {
+      background: #2a2a2a;
+      color: white;
+      border: 1px solid #444;
+    }
   </style>
 
 </head>
@@ -79,9 +98,12 @@
     <div class="header">
       <img src="logo.png" alt="NeoAki">
       <h1>NeoAki</h1>
+
+      <!-- BOTÃO TEMA -->
+      <button onclick="alternarTema()">🌗 Mudar tema</button>
     </div>
 
-    <!-- CAIXA DE POST -->
+    <!-- POST BOX -->
     <div class="post-box">
 
       <input type="text" id="postInput" placeholder="O que você está pensando?">
@@ -97,7 +119,7 @@
 
   </div>
 
-  <script type="module">
+  <script>
     function postar() {
       const texto = document.getElementById("postInput").value;
       const imagem = document.getElementById("imageInput").files[0];
@@ -127,8 +149,11 @@
       document.getElementById("imageInput").value = "";
     }
 
-    window.postar = postar;
+    function alternarTema() {
+      document.body.classList.toggle("dark");
+    }
   </script>
 
 </body>
 </html>
+ 
