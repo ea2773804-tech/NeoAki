@@ -59,7 +59,45 @@
     }
 
     /* FEED */
-    .post {
+    .post {<script>
+function postar() {
+  const texto = document.getElementById("postInput").value;
+  const imagem = document.getElementById("imageInput").files[0];
+  const feed = document.getElementById("feed");
+
+  if (texto.trim() === "" && !imagem) return;
+
+  const post = document.createElement("div");
+  post.className = "post";
+
+  const hora = new Date().toLocaleTimeString();
+
+  let conteudo = `
+    <strong>Você</strong>
+    <small style="color:gray;"> • ${hora}</small>
+    <br><br>
+  `;
+
+  if (texto.trim() !== "") {
+    conteudo += `<p>${texto}</p>`;
+  }
+
+  if (imagem) {
+    const url = URL.createObjectURL(imagem);
+    conteudo += `<img src="${url}">`;
+  }
+
+  // BOTÃO DE APAGAR
+  conteudo += `<br><button onclick="this.parentElement.remove()" style="background:red;">🗑️ Apagar</button>`;
+
+  post.innerHTML = conteudo;
+
+  feed.prepend(post);
+
+  document.getElementById("postInput").value = "";
+  document.getElementById("imageInput").value = "";
+}
+</script>
       background: white;
       padding: 12px;
       border-radius: 12px;
