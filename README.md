@@ -1,40 +1,34 @@
 # NeoAki
 
-Base inicial do site NeoAki (rede social), construída com:
-- HTML
-- CSS
-- JavaScript puro (sem frameworks)
+Base inicial do site NeoAki com autenticação por e-mail/senha via Firebase Authentication.
 
-## Estrutura de arquivos
+## Estrutura
 
 - `index.html`
 - `style.css`
 - `script.js`
+- `firebase-config.js`
 
-## O que já foi feito
+## Configurar Firebase Authentication
 
-- Header com nome **NeoAki**
-- Botões de **Login** e **Cadastro**
-- Área principal com feed vazio (placeholder)
-- HTML conectado corretamente ao CSS e ao JS
-- Código separado e comentado
+1. Acesse o Firebase Console.
+2. Crie um projeto e um app Web.
+3. Em **Authentication > Sign-in method**, habilite **Email/Password**.
+4. Copie as credenciais do app Web.
+5. Cole no arquivo `firebase-config.js` no objeto `firebaseConfig`.
 
-## Como rodar no navegador
+## Como rodar
 
-1. Abra a pasta do projeto.
-2. Dê duplo clique no arquivo `index.html`.
-
-Ou, se preferir rodar com servidor local:
+Abra `index.html` com servidor local (recomendado):
 
 ```bash
 python3 -m http.server 5500
 ```
 
-Acesse:
-- `http://localhost:5500/index.html`
+Acesse `http://localhost:5500/index.html`.
 
-## Próximos passos
+## Fluxo atual
 
-- Criar telas/formulários de login e cadastro
-- Integrar autenticação (quando você pedir)
-- Construir feed de posts
+- Clique em **Login** para modo de entrada.
+- Clique em **Cadastro** para criar conta.
+- Use o botão **Sair** após autenticar.
