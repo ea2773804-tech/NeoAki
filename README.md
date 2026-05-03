@@ -1,2 +1,2 @@
 # NeoAki
-NeoAki e uma rede social de gamers
+NeoAki e uma rede social
