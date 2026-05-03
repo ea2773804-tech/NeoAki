@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NeoAki - Rede Social</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>NeoAki</h1>
+      <div id="auth-status" class="auth-status">Não autenticado</div>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <h2>Criar conta</h2>
+        <form id="signup-form">
+          <label for="signup-name">Nome</label>
+          <input id="signup-name" type="text" required minlength="2" />
+
+          <label for="signup-email">Email</label>
+          <input id="signup-email" type="email" required />
+
+          <label for="signup-password">Senha</label>
+          <input id="signup-password" type="password" required minlength="6" />
+
+          <button type="submit">Cadastrar</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Entrar</h2>
+        <form id="login-form">
+          <label for="login-email">Email</label>
+          <input id="login-email" type="email" required />
+
+          <label for="login-password">Senha</label>
+          <input id="login-password" type="password" required minlength="6" />
+
+          <button type="submit">Login</button>
+        </form>
+      </section>
+
+      <section class="card" id="user-panel" hidden>
+        <h2>Usuário logado</h2>
+        <p><strong>Nome:</strong> <span id="user-name">-</span></p>
+        <p><strong>Email:</strong> <span id="user-email">-</span></p>
+        <button id="logout-btn" type="button">Sair</button>
+      </section>
+
+      <section class="card">
+        <h2>Logs</h2>
+        <pre id="log"></pre>
+      </section>
+    </main>
+
+    <!-- Firebase SDK (modular) -->
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="auth.js"></script>
+  </body>
+</html>
