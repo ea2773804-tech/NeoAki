@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NeoAki</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Cabeçalho principal -->
+    <header class="header">
+      <div class="brand">NeoAki</div>
+      <nav class="actions" aria-label="Ações de autenticação">
+        <button id="login-btn" class="btn btn-secondary" type="button">Login</button>
+        <button id="signup-btn" class="btn btn-primary" type="button">Cadastro</button>
+        <button id="logout-btn" class="btn" type="button" hidden>Sair</button>
+      </nav>
+    </header>
+
+    <!-- Área principal / feed inicial -->
+    <main class="main-content">
+      <section class="feed" aria-label="Feed principal">
+        <h1>Feed</h1>
+        <p class="empty-state">Nenhuma publicação ainda. Em breve você poderá ver posts aqui.</p>
+      </section>
+
+      <section class="auth-panel" aria-label="Autenticação">
+        <h2>Autenticação</h2>
+
+        <form id="auth-form" class="auth-form">
+          <label for="name">Nome (somente cadastro)</label>
+          <input id="name" type="text" minlength="2" placeholder="Seu nome" />
+
+          <label for="email">E-mail</label>
+          <input id="email" type="email" required placeholder="voce@email.com" />
+
+          <label for="password">Senha</label>
+          <input id="password" type="password" required minlength="6" placeholder="Mínimo 6 caracteres" />
+
+          <button id="submit-btn" class="btn btn-primary" type="submit">Entrar</button>
+        </form>
+
+        <p id="user-state" class="user-state">Não autenticado</p>
+        <p id="auth-message" class="auth-message" role="status" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
